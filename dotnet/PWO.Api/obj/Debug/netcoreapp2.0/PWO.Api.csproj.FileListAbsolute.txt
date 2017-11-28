@@ -1,0 +1,14 @@
+/Users/tine/Sites/EP18-57PWO/dotnet/PWO.Api/obj/Debug/netcoreapp2.0/PWO.Api.csproj.CoreCompileInputs.cache
+/Users/tine/Sites/EP18-57PWO/dotnet/PWO.Api/obj/Debug/netcoreapp2.0/PWO.Api.AssemblyInfoInputs.cache
+/Users/tine/Sites/EP18-57PWO/dotnet/PWO.Api/obj/Debug/netcoreapp2.0/PWO.Api.AssemblyInfo.cs
+/Users/tine/Sites/EP18-57PWO/dotnet/PWO.Api/bin/Debug/netcoreapp2.0/PWO.Api.deps.json
+/Users/tine/Sites/EP18-57PWO/dotnet/PWO.Api/bin/Debug/netcoreapp2.0/PWO.Api.runtimeconfig.json
+/Users/tine/Sites/EP18-57PWO/dotnet/PWO.Api/bin/Debug/netcoreapp2.0/PWO.Api.runtimeconfig.dev.json
+/Users/tine/Sites/EP18-57PWO/dotnet/PWO.Api/bin/Debug/netcoreapp2.0/PWO.Api.dll
+/Users/tine/Sites/EP18-57PWO/dotnet/PWO.Api/bin/Debug/netcoreapp2.0/PWO.Api.pdb
+/Users/tine/Sites/EP18-57PWO/dotnet/PWO.Api/obj/Debug/netcoreapp2.0/PWO.Api.dll
+/Users/tine/Sites/EP18-57PWO/dotnet/PWO.Api/obj/Debug/netcoreapp2.0/PWO.Api.pdb
+/Users/tine/Sites/EP18-57PWO/dotnet/PWO.Api/bin/Debug/netcoreapp2.0/PWO.Db.dll
+/Users/tine/Sites/EP18-57PWO/dotnet/PWO.Api/bin/Debug/netcoreapp2.0/PWO.Models.dll
+/Users/tine/Sites/EP18-57PWO/dotnet/PWO.Api/bin/Debug/netcoreapp2.0/PWO.Models.pdb
+/Users/tine/Sites/EP18-57PWO/dotnet/PWO.Api/bin/Debug/netcoreapp2.0/PWO.Db.pdb

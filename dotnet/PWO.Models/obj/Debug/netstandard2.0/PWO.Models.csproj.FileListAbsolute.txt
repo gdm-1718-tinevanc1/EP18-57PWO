@@ -1,0 +1,8 @@
+/Users/tine/Sites/EP18-57PWO/dotnet/PWO.Models/obj/Debug/netstandard2.0/PWO.Models.csproj.CoreCompileInputs.cache
+/Users/tine/Sites/EP18-57PWO/dotnet/PWO.Models/obj/Debug/netstandard2.0/PWO.Models.AssemblyInfoInputs.cache
+/Users/tine/Sites/EP18-57PWO/dotnet/PWO.Models/obj/Debug/netstandard2.0/PWO.Models.AssemblyInfo.cs
+/Users/tine/Sites/EP18-57PWO/dotnet/PWO.Models/bin/Debug/netstandard2.0/PWO.Models.deps.json
+/Users/tine/Sites/EP18-57PWO/dotnet/PWO.Models/bin/Debug/netstandard2.0/PWO.Models.dll
+/Users/tine/Sites/EP18-57PWO/dotnet/PWO.Models/bin/Debug/netstandard2.0/PWO.Models.pdb
+/Users/tine/Sites/EP18-57PWO/dotnet/PWO.Models/obj/Debug/netstandard2.0/PWO.Models.dll
+/Users/tine/Sites/EP18-57PWO/dotnet/PWO.Models/obj/Debug/netstandard2.0/PWO.Models.pdb
