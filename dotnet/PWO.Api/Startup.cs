@@ -42,6 +42,7 @@ namespace PWO.Api
             sharedOptions.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
             sharedOptions.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
             })
+
                         
             .AddJwtBearer(option =>
             {
@@ -49,6 +50,9 @@ namespace PWO.Api
             option.Audience = "https://localhost:44326";
             });
              */
+
+
+             // Microsoft.AspNetCore.Identity.UserManager
             services.AddOpenIddict<Guid>()
                 .AddEntityFrameworkCoreStores<ApplicationDbContext>();
 
@@ -110,6 +114,9 @@ namespace PWO.Api
 
             app.UseAuthentication();
             app.UseMvc();
+
+            ApplicationDbContextSeeder.Initialize(app.ApplicationServices);
+
         }
     }
 }

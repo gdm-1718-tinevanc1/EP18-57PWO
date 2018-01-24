@@ -16,45 +16,12 @@ namespace PWO.Db
         public ApplicationDbContext CreateDbContext(string[] args)
         {
             var builder = new DbContextOptionsBuilder<ApplicationDbContext>();
-            // var connectionString = "Server=tcp:ahs-pwo.database.windows.net,1433;Initial Catalog=pwoapp;Persist Security Info=False;User ID=ahspwo;Password=Artevelde_;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
-            // var providerName = "System.Data.SqlClient";
-            // var db = Database.OpenConnectionString(connectionString, providerName);
-            // builder.UseNpgsql(connectionString, providerName);
 
             builder.UseSqlServer("Server=tcp:ahs-pwo.database.windows.net,1433;Initial Catalog=pwoapp;Persist Security Info=False;User ID=ahspwo;Password=Artevelde_;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
-// ;providerName=System.Data.SqlClient
 
-            /* builder.DataSource = "ahs-pwo.database.windows.net"; 
-            builder.UserID = "ahspwo";            
-            builder.Password = "Artevelde_";     
-            builder.InitialCatalog = "pwoapp"; */
 
-            
-            // var connectionString = "Server=tcp:ahs-pwo.database.windows.net,1433;Initial Catalog=pwoapp;Persist Security Info=False;User ID=ahspwo;Password=Artevelde_;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
-            // var providerName = "System.Data.SqlClient";
-
-            //var db = Database.OpenConnectionString(connectionString, providerName); 
-            // builder.UseNpgsql(connectionString, providerName);
-
-            builder.EnableSensitiveDataLogging();
+            // builder.EnableSensitiveDataLogging();
             return new ApplicationDbContext(builder.Options);
         }
     }
 }
-/*
-
-public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<CodingBlastDbContext>
-{
-    public CodingBlastDbContext CreateDbContext(string[] args)
-    {
-        IConfigurationRoot configuration = new ConfigurationBuilder()
-            .SetBasePath(Directory.GetCurrentDirectory())
-            .AddJsonFile("appsettings.json")
-            .Build();
-        var builder = new DbContextOptionsBuilder<CodingBlastDbContext>();
-        var connectionString = configuration.GetConnectionString("DefaultConnection");
-        builder.UseSqlServer(connectionString);
-        return new CodingBlastDbContext(builder.Options);
-    }
-}
-*/

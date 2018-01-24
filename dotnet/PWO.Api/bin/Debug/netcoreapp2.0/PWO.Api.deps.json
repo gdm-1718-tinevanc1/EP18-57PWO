@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "223091ae9d7ca992ed85b37d510d0f8edc9664a7"
+    "signature": "7d45242570314d78c25a56e73325bd928a4ea32b"
   },
   "compilationOptions": {
     "defines": [
@@ -42,9 +42,9 @@
           "Microsoft.Owin.Host.SystemWeb": "3.1.0",
           "Microsoft.Owin.Security.Cookies": "3.1.0",
           "Microsoft.Owin.Security.OpenIdConnect": "3.1.0",
-          "OpenIddict": "2.0.0-rc2-0775",
-          "OpenIddict.EntityFrameworkCore": "2.0.0-rc2-0775",
-          "OpenIddict.Mvc": "2.0.0-rc2-0775",
+          "OpenIddict": "2.0.0-rc2-0792",
+          "OpenIddict.EntityFrameworkCore": "2.0.0-rc2-0792",
+          "OpenIddict.Mvc": "2.0.0-rc2-0792",
           "PWO.Db": "1.0.0",
           "PWO.Models": "1.0.0",
           "System.Data.SqlClient": "4.4.0"
@@ -104,6 +104,14 @@
         },
         "compile": {
           "lib/netcoreapp2.0/AspNet.Security.OpenIdConnect.Server.dll": {}
+        }
+      },
+      "Bogus/22.0.1": {
+        "runtime": {
+          "lib/netstandard2.0/Bogus.dll": {}
+        },
+        "compile": {
+          "lib/netstandard2.0/Bogus.dll": {}
         }
       },
       "CryptoHelper/3.0.0": {
@@ -2529,13 +2537,13 @@
           "lib/netstandard2.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll": {}
         }
       },
-      "OpenIddict/2.0.0-rc2-0775": {
+      "OpenIddict/2.0.0-rc2-0792": {
         "dependencies": {
           "AspNet.Security.OpenIdConnect.Server": "2.0.0-rc1-final",
           "Microsoft.AspNetCore.Diagnostics.Abstractions": "2.0.0",
           "Microsoft.Extensions.Caching.Abstractions": "2.0.0",
           "Newtonsoft.Json.Bson": "1.0.1",
-          "OpenIddict.Core": "2.0.0-rc2-0775"
+          "OpenIddict.Core": "2.0.0-rc2-0792"
         },
         "runtime": {
           "lib/netstandard2.0/OpenIddict.dll": {}
@@ -2544,13 +2552,13 @@
           "lib/netstandard2.0/OpenIddict.dll": {}
         }
       },
-      "OpenIddict.Core/2.0.0-rc2-0775": {
+      "OpenIddict.Core/2.0.0-rc2-0792": {
         "dependencies": {
           "CryptoHelper": "3.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "2.0.0",
           "Microsoft.Extensions.Logging.Abstractions": "2.0.0",
           "Microsoft.Extensions.Options": "2.0.0",
-          "OpenIddict.Models": "2.0.0-rc2-0775",
+          "OpenIddict.Models": "2.0.0-rc2-0792",
           "System.Collections.Immutable": "1.4.0"
         },
         "runtime": {
@@ -2560,10 +2568,10 @@
           "lib/netstandard2.0/OpenIddict.Core.dll": {}
         }
       },
-      "OpenIddict.EntityFrameworkCore/2.0.0-rc2-0775": {
+      "OpenIddict.EntityFrameworkCore/2.0.0-rc2-0792": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Relational": "2.0.0",
-          "OpenIddict.Core": "2.0.0-rc2-0775"
+          "OpenIddict.Core": "2.0.0-rc2-0792"
         },
         "runtime": {
           "lib/netstandard2.0/OpenIddict.EntityFrameworkCore.dll": {}
@@ -2572,7 +2580,7 @@
           "lib/netstandard2.0/OpenIddict.EntityFrameworkCore.dll": {}
         }
       },
-      "OpenIddict.Models/2.0.0-rc2-0775": {
+      "OpenIddict.Models/2.0.0-rc2-0792": {
         "runtime": {
           "lib/netstandard2.0/OpenIddict.Models.dll": {}
         },
@@ -2580,11 +2588,11 @@
           "lib/netstandard2.0/OpenIddict.Models.dll": {}
         }
       },
-      "OpenIddict.Mvc/2.0.0-rc2-0775": {
+      "OpenIddict.Mvc/2.0.0-rc2-0792": {
         "dependencies": {
           "AspNet.Security.OpenIdConnect.Server": "2.0.0-rc1-final",
           "Microsoft.AspNetCore.Mvc.Core": "2.0.0",
-          "OpenIddict.Core": "2.0.0-rc2-0775"
+          "OpenIddict.Core": "2.0.0-rc2-0792"
         },
         "runtime": {
           "lib/netstandard2.0/OpenIddict.Mvc.dll": {}
@@ -4033,13 +4041,14 @@
       "PWO.Db/1.0.0": {
         "dependencies": {
           "AspNet.Security.OAuth.Validation": "2.0.0-rc1-final",
+          "Bogus": "22.0.1",
           "Microsoft.AspNetCore.Identity": "2.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "2.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.0.0",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "2.0.0",
-          "OpenIddict": "2.0.0-rc2-0775",
-          "OpenIddict.EntityFrameworkCore": "2.0.0-rc2-0775",
-          "OpenIddict.Mvc": "2.0.0-rc2-0775",
+          "OpenIddict": "2.0.0-rc2-0792",
+          "OpenIddict.EntityFrameworkCore": "2.0.0-rc2-0792",
+          "OpenIddict.Mvc": "2.0.0-rc2-0792",
           "PWO.Models": "1.0.0"
         },
         "runtime": {
@@ -4054,9 +4063,9 @@
           "AspNet.Security.OAuth.Validation": "2.0.0-rc1-final",
           "Microsoft.AspNetCore.Identity": "2.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "2.0.0",
-          "OpenIddict": "2.0.0-rc2-0775",
-          "OpenIddict.EntityFrameworkCore": "2.0.0-rc2-0775",
-          "OpenIddict.Mvc": "2.0.0-rc2-0775"
+          "OpenIddict": "2.0.0-rc2-0792",
+          "OpenIddict.EntityFrameworkCore": "2.0.0-rc2-0792",
+          "OpenIddict.Mvc": "2.0.0-rc2-0792"
         },
         "runtime": {
           "PWO.Models.dll": {}
@@ -4276,6 +4285,13 @@
       "sha512": "sha512-ypuOa6rYQVhdbCL6/AdNQqVWHaxd3FDM9P5euBkK2UuQnQQ2MBmhSUP5eqCemX2Dzezy4bUOghYlqlN6zVLwyQ==",
       "path": "aspnet.security.openidconnect.server/2.0.0-rc1-final",
       "hashPath": "aspnet.security.openidconnect.server.2.0.0-rc1-final.nupkg.sha512"
+    },
+    "Bogus/22.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-s1s9ivXyOxEA4MqYSDfKRBOvjLZEK+pAfKmZ8iehMqxOSxt5MTfiOI3dSVst5fC5N++WuIp3pscrHiABKj6wWQ==",
+      "path": "bogus/22.0.1",
+      "hashPath": "bogus.22.0.1.nupkg.sha512"
     },
     "CryptoHelper/3.0.0": {
       "type": "package",
@@ -5488,40 +5504,40 @@
       "path": "npgsql.entityframeworkcore.postgresql/2.0.0",
       "hashPath": "npgsql.entityframeworkcore.postgresql.2.0.0.nupkg.sha512"
     },
-    "OpenIddict/2.0.0-rc2-0775": {
+    "OpenIddict/2.0.0-rc2-0792": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-CKbGS1xZOfzI9H4z/qamQP03nZN96MyFbWKVa3h7XZPDeTgtSBM7zuiSrAian/brNgmq5LtZQTJNVg2xA3klGg==",
-      "path": "openiddict/2.0.0-rc2-0775",
-      "hashPath": "openiddict.2.0.0-rc2-0775.nupkg.sha512"
+      "sha512": "sha512-oViByoFUKZM7KDZ7kvFRMjT1jWWg8IipWd9I09NyPEsexD0Dbs/P7fY0HA6oo4e4E1dWkULqpimurnEe4/P6Qg==",
+      "path": "openiddict/2.0.0-rc2-0792",
+      "hashPath": "openiddict.2.0.0-rc2-0792.nupkg.sha512"
     },
-    "OpenIddict.Core/2.0.0-rc2-0775": {
+    "OpenIddict.Core/2.0.0-rc2-0792": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-DhwbqMwPThAQFbsbq0UwB6AxUELJ6fSRQb+krniN0Q0CHT1Qer4WlkpdKuteKvq8eiZv4Kk7D3K4n6CvV9MSfA==",
-      "path": "openiddict.core/2.0.0-rc2-0775",
-      "hashPath": "openiddict.core.2.0.0-rc2-0775.nupkg.sha512"
+      "sha512": "sha512-4aPYoO3CtK3wKcJRiNAkHihFRb0B5sYYXdtvf5tEyoFwsIjXfAZA9DtQTqMz8ibvMH9dm48AqY2hozfmk3pDFQ==",
+      "path": "openiddict.core/2.0.0-rc2-0792",
+      "hashPath": "openiddict.core.2.0.0-rc2-0792.nupkg.sha512"
     },
-    "OpenIddict.EntityFrameworkCore/2.0.0-rc2-0775": {
+    "OpenIddict.EntityFrameworkCore/2.0.0-rc2-0792": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-5COGDETPN+LHn/XXNEN6Wwu/IdTqE8pjLNyB5RstEKYvpNdn6Ziv6z7EqDZzGsfa/WmFd4x/80EPKehDsCknRw==",
-      "path": "openiddict.entityframeworkcore/2.0.0-rc2-0775",
-      "hashPath": "openiddict.entityframeworkcore.2.0.0-rc2-0775.nupkg.sha512"
+      "sha512": "sha512-0jbrvH3scoRc17UCsUjjgfAe6x0c2D3+9SViN7tjCCOZkfVihxvvgXtcs+xWpzNwBBRlckWV+szX64a2yAaS+A==",
+      "path": "openiddict.entityframeworkcore/2.0.0-rc2-0792",
+      "hashPath": "openiddict.entityframeworkcore.2.0.0-rc2-0792.nupkg.sha512"
     },
-    "OpenIddict.Models/2.0.0-rc2-0775": {
+    "OpenIddict.Models/2.0.0-rc2-0792": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-S7TZyPMvJ8z8CFyAp631ATVyl976Vy4A7Hg4XRsI8YtTN18roe8ijdbh5zADLwS5yaDI4gfwlxNY83WkKOlKeQ==",
-      "path": "openiddict.models/2.0.0-rc2-0775",
-      "hashPath": "openiddict.models.2.0.0-rc2-0775.nupkg.sha512"
+      "sha512": "sha512-ieDYMmadkGUr2txiH76MGzdIdkHoZzKLk6Xg11wltUxkBe9xwWdvv3Oc/7cziRpSf2z1fPw7egZjissxUdEW5w==",
+      "path": "openiddict.models/2.0.0-rc2-0792",
+      "hashPath": "openiddict.models.2.0.0-rc2-0792.nupkg.sha512"
     },
-    "OpenIddict.Mvc/2.0.0-rc2-0775": {
+    "OpenIddict.Mvc/2.0.0-rc2-0792": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-j1+GK62gCcvXeyIADYw/Nkc3OyXWcXvz3MTjqx0R0dTEAIrb67fyAVW5As9gyZWh/orpUc63SaMKz95cICKjJQ==",
-      "path": "openiddict.mvc/2.0.0-rc2-0775",
-      "hashPath": "openiddict.mvc.2.0.0-rc2-0775.nupkg.sha512"
+      "sha512": "sha512-3CCjwwrdGrWZuvCDYypKYN+HYWnWypLcF9sdtEvNfxUCT/Yk+VnEg1k2AqLgrkyLJp+P/fdUaGEBoIApFYisjQ==",
+      "path": "openiddict.mvc/2.0.0-rc2-0792",
+      "hashPath": "openiddict.mvc.2.0.0-rc2-0792.nupkg.sha512"
     },
     "Owin/1.0.0": {
       "type": "package",

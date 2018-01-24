@@ -2861,42 +2861,14 @@
           "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
         }
       },
-      "Npgsql/3.2.5": {
-        "type": "package",
-        "dependencies": {
-          "System.Threading.Tasks.Extensions": "4.3.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/Npgsql.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Npgsql.dll": {}
-        }
-      },
-      "Npgsql.EntityFrameworkCore.PostgreSQL/2.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore": "2.0.0",
-          "Microsoft.EntityFrameworkCore.Relational": "2.0.0",
-          "Microsoft.Extensions.DependencyInjection": "2.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.0.0",
-          "Npgsql": "3.2.5"
-        },
-        "compile": {
-          "lib/netstandard2.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll": {}
-        }
-      },
-      "OpenIddict/2.0.0-rc2-0775": {
+      "OpenIddict/2.0.0-rc2-0792": {
         "type": "package",
         "dependencies": {
           "AspNet.Security.OpenIdConnect.Server": "2.0.0-rc1-final",
           "Microsoft.AspNetCore.Diagnostics.Abstractions": "2.0.0",
           "Microsoft.Extensions.Caching.Abstractions": "2.0.0",
           "Newtonsoft.Json.Bson": "1.0.1",
-          "OpenIddict.Core": "2.0.0-rc2-0775"
+          "OpenIddict.Core": "2.0.0-rc2-0792"
         },
         "compile": {
           "lib/netstandard2.0/OpenIddict.dll": {}
@@ -2905,14 +2877,14 @@
           "lib/netstandard2.0/OpenIddict.dll": {}
         }
       },
-      "OpenIddict.Core/2.0.0-rc2-0775": {
+      "OpenIddict.Core/2.0.0-rc2-0792": {
         "type": "package",
         "dependencies": {
           "CryptoHelper": "3.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "2.0.0",
           "Microsoft.Extensions.Logging.Abstractions": "2.0.0",
           "Microsoft.Extensions.Options": "2.0.0",
-          "OpenIddict.Models": "2.0.0-rc2-0775",
+          "OpenIddict.Models": "2.0.0-rc2-0792",
           "System.Collections.Immutable": "1.4.0"
         },
         "compile": {
@@ -2922,11 +2894,11 @@
           "lib/netstandard2.0/OpenIddict.Core.dll": {}
         }
       },
-      "OpenIddict.EntityFrameworkCore/2.0.0-rc2-0775": {
+      "OpenIddict.EntityFrameworkCore/2.0.0-rc2-0792": {
         "type": "package",
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Relational": "2.0.0",
-          "OpenIddict.Core": "2.0.0-rc2-0775"
+          "OpenIddict.Core": "2.0.0-rc2-0792"
         },
         "compile": {
           "lib/netstandard2.0/OpenIddict.EntityFrameworkCore.dll": {}
@@ -2935,7 +2907,7 @@
           "lib/netstandard2.0/OpenIddict.EntityFrameworkCore.dll": {}
         }
       },
-      "OpenIddict.Models/2.0.0-rc2-0775": {
+      "OpenIddict.Models/2.0.0-rc2-0792": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/OpenIddict.Models.dll": {}
@@ -2944,12 +2916,12 @@
           "lib/netstandard2.0/OpenIddict.Models.dll": {}
         }
       },
-      "OpenIddict.Mvc/2.0.0-rc2-0775": {
+      "OpenIddict.Mvc/2.0.0-rc2-0792": {
         "type": "package",
         "dependencies": {
           "AspNet.Security.OpenIdConnect.Server": "2.0.0-rc1-final",
           "Microsoft.AspNetCore.Mvc.Core": "2.0.0",
-          "OpenIddict.Core": "2.0.0-rc2-0775"
+          "OpenIddict.Core": "2.0.0-rc2-0792"
         },
         "compile": {
           "lib/netstandard2.0/OpenIddict.Mvc.dll": {}
@@ -4977,27 +4949,6 @@
         },
         "runtime": {
           "lib/netstandard1.3/Microsoft.WindowsAzure.Storage.dll": {}
-        }
-      },
-      "PWO.Db/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "AspNet.Security.OAuth.Validation": "2.0.0",
-          "Microsoft.AspNetCore.Identity": "2.0.0",
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "2.0.0",
-          "Microsoft.EntityFrameworkCore.SqlServer": "2.0.0",
-          "Npgsql.EntityFrameworkCore.PostgreSQL": "2.0.0",
-          "OpenIddict": "2.0.0",
-          "OpenIddict.EntityFrameworkCore": "2.0.0",
-          "OpenIddict.Mvc": "2.0.0",
-          "PWO.Models": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/PWO.Db.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/PWO.Db.dll": {}
         }
       },
       "PWO.Models/1.0.0": {
@@ -7956,85 +7907,58 @@
         "newtonsoft.json.bson.nuspec"
       ]
     },
-    "Npgsql/3.2.5": {
-      "sha512": "89z5pHuLuwjkHz/cQLuM/YxlepR/0NKJP+Cvu8z1cAMv7AdKZnN5leQqV6HxIQDR245Xal1w5OH7kDb9hDRupg==",
+    "OpenIddict/2.0.0-rc2-0792": {
+      "sha512": "oViByoFUKZM7KDZ7kvFRMjT1jWWg8IipWd9I09NyPEsexD0Dbs/P7fY0HA6oo4e4E1dWkULqpimurnEe4/P6Qg==",
       "type": "package",
-      "path": "npgsql/3.2.5",
-      "files": [
-        "lib/net45/Npgsql.dll",
-        "lib/net45/Npgsql.xml",
-        "lib/net451/Npgsql.dll",
-        "lib/net451/Npgsql.xml",
-        "lib/netstandard1.3/Npgsql.dll",
-        "lib/netstandard1.3/Npgsql.xml",
-        "lib/netstandard2.0/Npgsql.dll",
-        "lib/netstandard2.0/Npgsql.xml",
-        "npgsql.3.2.5.nupkg.sha512",
-        "npgsql.nuspec"
-      ]
-    },
-    "Npgsql.EntityFrameworkCore.PostgreSQL/2.0.0": {
-      "sha512": "saKCNK8A5OW3sUhL/tvYqNyKUK7AbIQlZUVmjn4Fw9wstyopECeF/9Er1fexRLpWev0/H9fUzFclTrXm+omsag==",
-      "type": "package",
-      "path": "npgsql.entityframeworkcore.postgresql/2.0.0",
-      "files": [
-        "lib/netstandard2.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll",
-        "npgsql.entityframeworkcore.postgresql.2.0.0.nupkg.sha512",
-        "npgsql.entityframeworkcore.postgresql.nuspec"
-      ]
-    },
-    "OpenIddict/2.0.0-rc2-0775": {
-      "sha512": "CKbGS1xZOfzI9H4z/qamQP03nZN96MyFbWKVa3h7XZPDeTgtSBM7zuiSrAian/brNgmq5LtZQTJNVg2xA3klGg==",
-      "type": "package",
-      "path": "openiddict/2.0.0-rc2-0775",
+      "path": "openiddict/2.0.0-rc2-0792",
       "files": [
         "lib/netstandard2.0/OpenIddict.dll",
         "lib/netstandard2.0/OpenIddict.xml",
-        "openiddict.2.0.0-rc2-0775.nupkg.sha512",
+        "openiddict.2.0.0-rc2-0792.nupkg.sha512",
         "openiddict.nuspec"
       ]
     },
-    "OpenIddict.Core/2.0.0-rc2-0775": {
-      "sha512": "DhwbqMwPThAQFbsbq0UwB6AxUELJ6fSRQb+krniN0Q0CHT1Qer4WlkpdKuteKvq8eiZv4Kk7D3K4n6CvV9MSfA==",
+    "OpenIddict.Core/2.0.0-rc2-0792": {
+      "sha512": "4aPYoO3CtK3wKcJRiNAkHihFRb0B5sYYXdtvf5tEyoFwsIjXfAZA9DtQTqMz8ibvMH9dm48AqY2hozfmk3pDFQ==",
       "type": "package",
-      "path": "openiddict.core/2.0.0-rc2-0775",
+      "path": "openiddict.core/2.0.0-rc2-0792",
       "files": [
         "lib/netstandard2.0/OpenIddict.Core.dll",
         "lib/netstandard2.0/OpenIddict.Core.xml",
-        "openiddict.core.2.0.0-rc2-0775.nupkg.sha512",
+        "openiddict.core.2.0.0-rc2-0792.nupkg.sha512",
         "openiddict.core.nuspec"
       ]
     },
-    "OpenIddict.EntityFrameworkCore/2.0.0-rc2-0775": {
-      "sha512": "5COGDETPN+LHn/XXNEN6Wwu/IdTqE8pjLNyB5RstEKYvpNdn6Ziv6z7EqDZzGsfa/WmFd4x/80EPKehDsCknRw==",
+    "OpenIddict.EntityFrameworkCore/2.0.0-rc2-0792": {
+      "sha512": "0jbrvH3scoRc17UCsUjjgfAe6x0c2D3+9SViN7tjCCOZkfVihxvvgXtcs+xWpzNwBBRlckWV+szX64a2yAaS+A==",
       "type": "package",
-      "path": "openiddict.entityframeworkcore/2.0.0-rc2-0775",
+      "path": "openiddict.entityframeworkcore/2.0.0-rc2-0792",
       "files": [
         "lib/netstandard2.0/OpenIddict.EntityFrameworkCore.dll",
         "lib/netstandard2.0/OpenIddict.EntityFrameworkCore.xml",
-        "openiddict.entityframeworkcore.2.0.0-rc2-0775.nupkg.sha512",
+        "openiddict.entityframeworkcore.2.0.0-rc2-0792.nupkg.sha512",
         "openiddict.entityframeworkcore.nuspec"
       ]
     },
-    "OpenIddict.Models/2.0.0-rc2-0775": {
-      "sha512": "S7TZyPMvJ8z8CFyAp631ATVyl976Vy4A7Hg4XRsI8YtTN18roe8ijdbh5zADLwS5yaDI4gfwlxNY83WkKOlKeQ==",
+    "OpenIddict.Models/2.0.0-rc2-0792": {
+      "sha512": "ieDYMmadkGUr2txiH76MGzdIdkHoZzKLk6Xg11wltUxkBe9xwWdvv3Oc/7cziRpSf2z1fPw7egZjissxUdEW5w==",
       "type": "package",
-      "path": "openiddict.models/2.0.0-rc2-0775",
+      "path": "openiddict.models/2.0.0-rc2-0792",
       "files": [
         "lib/netstandard2.0/OpenIddict.Models.dll",
         "lib/netstandard2.0/OpenIddict.Models.xml",
-        "openiddict.models.2.0.0-rc2-0775.nupkg.sha512",
+        "openiddict.models.2.0.0-rc2-0792.nupkg.sha512",
         "openiddict.models.nuspec"
       ]
     },
-    "OpenIddict.Mvc/2.0.0-rc2-0775": {
-      "sha512": "j1+GK62gCcvXeyIADYw/Nkc3OyXWcXvz3MTjqx0R0dTEAIrb67fyAVW5As9gyZWh/orpUc63SaMKz95cICKjJQ==",
+    "OpenIddict.Mvc/2.0.0-rc2-0792": {
+      "sha512": "3CCjwwrdGrWZuvCDYypKYN+HYWnWypLcF9sdtEvNfxUCT/Yk+VnEg1k2AqLgrkyLJp+P/fdUaGEBoIApFYisjQ==",
       "type": "package",
-      "path": "openiddict.mvc/2.0.0-rc2-0775",
+      "path": "openiddict.mvc/2.0.0-rc2-0792",
       "files": [
         "lib/netstandard2.0/OpenIddict.Mvc.dll",
         "lib/netstandard2.0/OpenIddict.Mvc.xml",
-        "openiddict.mvc.2.0.0-rc2-0775.nupkg.sha512",
+        "openiddict.mvc.2.0.0-rc2-0792.nupkg.sha512",
         "openiddict.mvc.nuspec"
       ]
     },
@@ -13016,11 +12940,6 @@
         "windowsazure.storage.nuspec"
       ]
     },
-    "PWO.Db/1.0.0": {
-      "type": "project",
-      "path": "../PWO.Db/PWO.Db.csproj",
-      "msbuildProject": "../PWO.Db/PWO.Db.csproj"
-    },
     "PWO.Models/1.0.0": {
       "type": "project",
       "path": "../PWO.Models/PWO.Models.csproj",
@@ -13051,7 +12970,6 @@
       "OpenIddict >= 2.0.0-*",
       "OpenIddict.EntityFrameworkCore >= 2.0.0-*",
       "OpenIddict.Mvc >= 2.0.0-*",
-      "PWO.Db >= 1.0.0",
       "PWO.Models >= 1.0.0",
       "System.Data.SqlClient >= 4.4.0"
     ]
@@ -13090,9 +13008,6 @@
           "projectReferences": {
             "/Users/tine/Sites/EP18-57PWO/dotnet/PWO.Models/PWO.Models.csproj": {
               "projectPath": "/Users/tine/Sites/EP18-57PWO/dotnet/PWO.Models/PWO.Models.csproj"
-            },
-            "/Users/tine/Sites/EP18-57PWO/dotnet/PWO.Db/PWO.Db.csproj": {
-              "projectPath": "/Users/tine/Sites/EP18-57PWO/dotnet/PWO.Db/PWO.Db.csproj"
             }
           }
         }

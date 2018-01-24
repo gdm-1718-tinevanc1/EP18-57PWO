@@ -56,6 +56,15 @@
           "lib/netstandard2.0/AspNet.Security.OpenIdConnect.Server.dll": {}
         }
       },
+      "Bogus/22.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Bogus.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Bogus.dll": {}
+        }
+      },
       "CryptoHelper/3.0.0": {
         "type": "package",
         "dependencies": {
@@ -900,14 +909,14 @@
           "lib/netstandard2.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll": {}
         }
       },
-      "OpenIddict/2.0.0-rc2-0775": {
+      "OpenIddict/2.0.0-rc2-0792": {
         "type": "package",
         "dependencies": {
           "AspNet.Security.OpenIdConnect.Server": "2.0.0-rc1-final",
           "Microsoft.AspNetCore.Diagnostics.Abstractions": "2.0.0",
           "Microsoft.Extensions.Caching.Abstractions": "2.0.0",
           "Newtonsoft.Json.Bson": "1.0.1",
-          "OpenIddict.Core": "2.0.0-rc2-0775"
+          "OpenIddict.Core": "2.0.0-rc2-0792"
         },
         "compile": {
           "lib/netstandard2.0/OpenIddict.dll": {}
@@ -916,14 +925,14 @@
           "lib/netstandard2.0/OpenIddict.dll": {}
         }
       },
-      "OpenIddict.Core/2.0.0-rc2-0775": {
+      "OpenIddict.Core/2.0.0-rc2-0792": {
         "type": "package",
         "dependencies": {
           "CryptoHelper": "3.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "2.0.0",
           "Microsoft.Extensions.Logging.Abstractions": "2.0.0",
           "Microsoft.Extensions.Options": "2.0.0",
-          "OpenIddict.Models": "2.0.0-rc2-0775",
+          "OpenIddict.Models": "2.0.0-rc2-0792",
           "System.Collections.Immutable": "1.4.0"
         },
         "compile": {
@@ -933,11 +942,11 @@
           "lib/netstandard2.0/OpenIddict.Core.dll": {}
         }
       },
-      "OpenIddict.EntityFrameworkCore/2.0.0-rc2-0775": {
+      "OpenIddict.EntityFrameworkCore/2.0.0-rc2-0792": {
         "type": "package",
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Relational": "2.0.0",
-          "OpenIddict.Core": "2.0.0-rc2-0775"
+          "OpenIddict.Core": "2.0.0-rc2-0792"
         },
         "compile": {
           "lib/netstandard2.0/OpenIddict.EntityFrameworkCore.dll": {}
@@ -946,7 +955,7 @@
           "lib/netstandard2.0/OpenIddict.EntityFrameworkCore.dll": {}
         }
       },
-      "OpenIddict.Models/2.0.0-rc2-0775": {
+      "OpenIddict.Models/2.0.0-rc2-0792": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/OpenIddict.Models.dll": {}
@@ -955,12 +964,12 @@
           "lib/netstandard2.0/OpenIddict.Models.dll": {}
         }
       },
-      "OpenIddict.Mvc/2.0.0-rc2-0775": {
+      "OpenIddict.Mvc/2.0.0-rc2-0792": {
         "type": "package",
         "dependencies": {
           "AspNet.Security.OpenIdConnect.Server": "2.0.0-rc1-final",
           "Microsoft.AspNetCore.Mvc.Core": "2.0.0",
-          "OpenIddict.Core": "2.0.0-rc2-0775"
+          "OpenIddict.Core": "2.0.0-rc2-0792"
         },
         "compile": {
           "lib/netstandard2.0/OpenIddict.Mvc.dll": {}
@@ -2444,6 +2453,21 @@
         "lib/netstandard2.0/AspNet.Security.OpenIdConnect.Server.xml"
       ]
     },
+    "Bogus/22.0.1": {
+      "sha512": "s1s9ivXyOxEA4MqYSDfKRBOvjLZEK+pAfKmZ8iehMqxOSxt5MTfiOI3dSVst5fC5N++WuIp3pscrHiABKj6wWQ==",
+      "type": "package",
+      "path": "bogus/22.0.1",
+      "files": [
+        "bogus.22.0.1.nupkg.sha512",
+        "bogus.nuspec",
+        "lib/net40/Bogus.dll",
+        "lib/net40/Bogus.xml",
+        "lib/netstandard1.3/Bogus.dll",
+        "lib/netstandard1.3/Bogus.xml",
+        "lib/netstandard2.0/Bogus.dll",
+        "lib/netstandard2.0/Bogus.xml"
+      ]
+    },
     "CryptoHelper/3.0.0": {
       "sha512": "CUCXoKUZ1XQSU5+TL2p5BkA6hSLHF4aBaSRNbxzTLQ6MPf1PEBLI1AH636ptL5iz0gYVieWWZu43Qn5j49LE/A==",
       "type": "package",
@@ -3385,58 +3409,58 @@
         "npgsql.entityframeworkcore.postgresql.nuspec"
       ]
     },
-    "OpenIddict/2.0.0-rc2-0775": {
-      "sha512": "CKbGS1xZOfzI9H4z/qamQP03nZN96MyFbWKVa3h7XZPDeTgtSBM7zuiSrAian/brNgmq5LtZQTJNVg2xA3klGg==",
+    "OpenIddict/2.0.0-rc2-0792": {
+      "sha512": "oViByoFUKZM7KDZ7kvFRMjT1jWWg8IipWd9I09NyPEsexD0Dbs/P7fY0HA6oo4e4E1dWkULqpimurnEe4/P6Qg==",
       "type": "package",
-      "path": "openiddict/2.0.0-rc2-0775",
+      "path": "openiddict/2.0.0-rc2-0792",
       "files": [
         "lib/netstandard2.0/OpenIddict.dll",
         "lib/netstandard2.0/OpenIddict.xml",
-        "openiddict.2.0.0-rc2-0775.nupkg.sha512",
+        "openiddict.2.0.0-rc2-0792.nupkg.sha512",
         "openiddict.nuspec"
       ]
     },
-    "OpenIddict.Core/2.0.0-rc2-0775": {
-      "sha512": "DhwbqMwPThAQFbsbq0UwB6AxUELJ6fSRQb+krniN0Q0CHT1Qer4WlkpdKuteKvq8eiZv4Kk7D3K4n6CvV9MSfA==",
+    "OpenIddict.Core/2.0.0-rc2-0792": {
+      "sha512": "4aPYoO3CtK3wKcJRiNAkHihFRb0B5sYYXdtvf5tEyoFwsIjXfAZA9DtQTqMz8ibvMH9dm48AqY2hozfmk3pDFQ==",
       "type": "package",
-      "path": "openiddict.core/2.0.0-rc2-0775",
+      "path": "openiddict.core/2.0.0-rc2-0792",
       "files": [
         "lib/netstandard2.0/OpenIddict.Core.dll",
         "lib/netstandard2.0/OpenIddict.Core.xml",
-        "openiddict.core.2.0.0-rc2-0775.nupkg.sha512",
+        "openiddict.core.2.0.0-rc2-0792.nupkg.sha512",
         "openiddict.core.nuspec"
       ]
     },
-    "OpenIddict.EntityFrameworkCore/2.0.0-rc2-0775": {
-      "sha512": "5COGDETPN+LHn/XXNEN6Wwu/IdTqE8pjLNyB5RstEKYvpNdn6Ziv6z7EqDZzGsfa/WmFd4x/80EPKehDsCknRw==",
+    "OpenIddict.EntityFrameworkCore/2.0.0-rc2-0792": {
+      "sha512": "0jbrvH3scoRc17UCsUjjgfAe6x0c2D3+9SViN7tjCCOZkfVihxvvgXtcs+xWpzNwBBRlckWV+szX64a2yAaS+A==",
       "type": "package",
-      "path": "openiddict.entityframeworkcore/2.0.0-rc2-0775",
+      "path": "openiddict.entityframeworkcore/2.0.0-rc2-0792",
       "files": [
         "lib/netstandard2.0/OpenIddict.EntityFrameworkCore.dll",
         "lib/netstandard2.0/OpenIddict.EntityFrameworkCore.xml",
-        "openiddict.entityframeworkcore.2.0.0-rc2-0775.nupkg.sha512",
+        "openiddict.entityframeworkcore.2.0.0-rc2-0792.nupkg.sha512",
         "openiddict.entityframeworkcore.nuspec"
       ]
     },
-    "OpenIddict.Models/2.0.0-rc2-0775": {
-      "sha512": "S7TZyPMvJ8z8CFyAp631ATVyl976Vy4A7Hg4XRsI8YtTN18roe8ijdbh5zADLwS5yaDI4gfwlxNY83WkKOlKeQ==",
+    "OpenIddict.Models/2.0.0-rc2-0792": {
+      "sha512": "ieDYMmadkGUr2txiH76MGzdIdkHoZzKLk6Xg11wltUxkBe9xwWdvv3Oc/7cziRpSf2z1fPw7egZjissxUdEW5w==",
       "type": "package",
-      "path": "openiddict.models/2.0.0-rc2-0775",
+      "path": "openiddict.models/2.0.0-rc2-0792",
       "files": [
         "lib/netstandard2.0/OpenIddict.Models.dll",
         "lib/netstandard2.0/OpenIddict.Models.xml",
-        "openiddict.models.2.0.0-rc2-0775.nupkg.sha512",
+        "openiddict.models.2.0.0-rc2-0792.nupkg.sha512",
         "openiddict.models.nuspec"
       ]
     },
-    "OpenIddict.Mvc/2.0.0-rc2-0775": {
-      "sha512": "j1+GK62gCcvXeyIADYw/Nkc3OyXWcXvz3MTjqx0R0dTEAIrb67fyAVW5As9gyZWh/orpUc63SaMKz95cICKjJQ==",
+    "OpenIddict.Mvc/2.0.0-rc2-0792": {
+      "sha512": "3CCjwwrdGrWZuvCDYypKYN+HYWnWypLcF9sdtEvNfxUCT/Yk+VnEg1k2AqLgrkyLJp+P/fdUaGEBoIApFYisjQ==",
       "type": "package",
-      "path": "openiddict.mvc/2.0.0-rc2-0775",
+      "path": "openiddict.mvc/2.0.0-rc2-0792",
       "files": [
         "lib/netstandard2.0/OpenIddict.Mvc.dll",
         "lib/netstandard2.0/OpenIddict.Mvc.xml",
-        "openiddict.mvc.2.0.0-rc2-0775.nupkg.sha512",
+        "openiddict.mvc.2.0.0-rc2-0792.nupkg.sha512",
         "openiddict.mvc.nuspec"
       ]
     },
@@ -7293,6 +7317,7 @@
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "AspNet.Security.OAuth.Validation >= 2.0.0-*",
+      "Bogus >= 22.0.1",
       "Microsoft.AspNetCore.Identity >= 2.0.0-*",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 2.0.0-*",
       "Microsoft.EntityFrameworkCore.SqlServer >= 2.0.0",
@@ -7394,6 +7419,10 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "2.0.0"
+          },
+          "Bogus": {
+            "target": "Package",
+            "version": "22.0.1"
           }
         },
         "imports": [

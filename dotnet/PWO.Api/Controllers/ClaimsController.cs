@@ -28,7 +28,7 @@ namespace PWO.Api.Controllers {
             //var claimsPrincipalCurrent = System.Security.Claims.ClaimsPrincipal.Current;
             //return claimsPrincipalCurrent.FindFirst("name").Value;
             return new string[] { "claims1", "claims2" };
-        } */
+        } */ 
 
         [HttpGet]
         public IActionResult Get()
