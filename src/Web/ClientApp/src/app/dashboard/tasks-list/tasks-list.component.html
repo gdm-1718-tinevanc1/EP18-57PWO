@@ -11,7 +11,7 @@
             <mat-form-field class="task__select">
                 <mat-select name="projects" placeholder="Project" [(ngModel)]="taskCredentials.projectId">
                   <mat-option>None</mat-option>
-                  <mat-option *ngFor="let project of projects" [value]="project.id" >{{project.shorttitle}}</mat-option>
+                  <mat-option *ngFor="let project of projects" [value]="project.id" >{{project.shorttitle.nl.value}}</mat-option>
                 </mat-select>
               </mat-form-field>
 
