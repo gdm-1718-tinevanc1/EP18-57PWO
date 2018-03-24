@@ -283,7 +283,7 @@ namespace Database
          private static string objectValue(string value)
         {
             // var result ="\"{\\\"nl\\\": { \\\"value\\\": \\\" " + value + " \\\", \\\"validate\\\": {\\\"allow_changes\\\":  false, \\\"required\\\": false, \\\"publication_ok\\\": false, \\\"validated_by\\\": null, \\\"feedback\\\": null, \\\"visible_to\\\": [] }}}\"";
-            var result ="\"{\\\"nl\\\": { \\\"value\\\": \\\" " + value + " \\\", \\\"validate\\\": {\\\"allow_changes\\\":  false, \\\"required\\\": false, \\\"publication_ok\\\": false, \\\"validated_by\\\": null, \\\"feedback\\\": null, \\\"visible_to\\\": [] }}, \\\"en\\\": { \\\"value\\\": \\\" " + value + " \\\", \\\"validate\\\": {\\\"allow_changes\\\":  false, \\\"required\\\": false, \\\"publication_ok\\\": false, \\\"validated_by\\\": null, \\\"feedback\\\": null, \\\"visible_to\\\": [] }}}\"";
+            var result ="\"{\\\"nl\\\": { \\\"value\\\": \\\" " + value + " \\\", \\\"validate\\\": {\\\"allow_changes\\\":  false, \\\"required\\\": false, \\\"publication_ok\\\": false, \\\"validated_by\\\": null,  \\\"editable_by\\\": [], \\\"feedback\\\": null, \\\"visible_to\\\": null }}, \\\"en\\\": { \\\"value\\\": \\\" " + value + " \\\", \\\"validate\\\": {\\\"allow_changes\\\":  false, \\\"required\\\": false, \\\"publication_ok\\\": false, \\\"validated_by\\\": null,  \\\"editable_by\\\": null, \\\"feedback\\\": null, \\\"visible_to\\\": null }}}\"";
 
             // eng
             return result;
@@ -291,7 +291,7 @@ namespace Database
 
         private static string objectValidate()
         {
-            var result ="\"{ \\\"validate\\\": {\\\"allow_changes\\\":  false, \\\"required\\\": false, \\\"publication_ok\\\": false, \\\"validated_by\\\": null, \\\"feedback\\\": null, \\\"visible_to\\\": [] }}\"";
+            var result ="\"{ \\\"validate\\\": {\\\"allow_changes\\\":  false, \\\"required\\\": false, \\\"publication_ok\\\": false, \\\"validated_by\\\": null, \\\"editable_by\\\": [], \\\"feedback\\\": null, \\\"visible_to\\\": null }}\"";
             // eng
             return result;
         }

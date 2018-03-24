@@ -10,30 +10,31 @@
       <div *ngIf="language === 'nl';else eng">
           <h5>{{'Nederlands'| translate}}</h5>
           <div>
-            <label id="title" for="title">{{'Titel'| translate}} project<span id="req_1" class="req">*</span></label><br>
-            <input id="title" name="title" type="text" maxlength="255" name="title" *ngIf="projectCredentials.title && projectCredentials.title.nl" [(ngModel)]="projectCredentials.title.nl.value" />
+            <label id="title" for="title">{{'Titel'| translate}} project</label><br>
+            <input [disabled]='!(isAdmin || editable_by.title.includes(AuthenticatedUser))' id="title" name="title" type="text" maxlength="255" name="title" *ngIf="projectCredentials.title && projectCredentials.title.nl" [(ngModel)]="projectCredentials.title.nl.value" />
             <button mat-button (click)="isExpandedValidate.title = !isExpandedValidate.title" class="button--validate"><i class="fa fa-check" aria-hidden="true"></i></button>
             <app-validate class="input" #cmp *ngIf="projectCredentials.title.en" [projectCredentials]="projectCredentials.title.nl.validate"  [hidden]='!isExpandedValidate.title'></app-validate>
             <!--  *ngIf="isExpandedValidate.title" -->
             
           </div>
           <div>
-            <label id="shorttitle" for="shorttitle">{{'Verkorte titel'| translate}} project</label><br>
-            <input id="shorttitle" name="shorttitle" type="text" maxlength="255" name="shorttitle" *ngIf="projectCredentials.shorttitle && projectCredentials.shorttitle.nl" [(ngModel)]="projectCredentials.shorttitle.nl.value" />   
+            <label id="shorttitle" for="shorttitle">{{'Verkorte titel'| translate}} project</label><br> 
+            <input [disabled]='!(isAdmin || editable_by.shorttitle.includes(AuthenticatedUser))' id="shorttitle" name="shorttitle" type="text" maxlength="255" name="shorttitle" *ngIf="projectCredentials.shorttitle && projectCredentials.shorttitle.nl" [(ngModel)]="projectCredentials.shorttitle.nl.value" />   
             <button mat-button (click)="isExpandedValidate.shorttitle = !isExpandedValidate.shorttitle" class="button--validate"><i class="fa fa-check" aria-hidden="true"></i></button>
             <app-validate class="input" #cmp *ngIf="projectCredentials.shorttitle.en" [projectCredentials]="projectCredentials.shorttitle.nl.validate"  [hidden]='!isExpandedValidate.shorttitle'></app-validate>
     
           </div>
           <div>
-            <label id="subtitle" for="subtitle">{{'Subtitel'| translate}} project</label><br>
-            <input id="subtitle" name="subtitle" type="text" maxlength="255" name="subtitle" *ngIf="projectCredentials.subtitle && projectCredentials.subtitle.nl" [(ngModel)]="projectCredentials.subtitle.nl.value" required>
+            <label id="subtitle" for="subtitle">{{'Subtitel'| translate}} project</label><br> 
+            <input [disabled]='!(isAdmin || editable_by.subtitle.includes(AuthenticatedUser))' id="subtitle" name="subtitle" type="text" maxlength="255" name="subtitle" *ngIf="projectCredentials.subtitle && projectCredentials.subtitle.nl" [(ngModel)]="projectCredentials.subtitle.nl.value" required>
             <button mat-button (click)="isExpandedValidate.subtitle = !isExpandedValidate.subtitle" class="button--validate"><i class="fa fa-check" aria-hidden="true"></i></button>
             <app-validate class="input" #cmp *ngIf="projectCredentials.subtitle.en" [projectCredentials]="projectCredentials.subtitle.nl.validate"  [hidden]='!isExpandedValidate.subtitle'></app-validate>
           </div>
     
           <div>
             <h4>{{'Beschrijving'| translate}}</h4>
-            <quill-editor class="quill-editor" [style]="{height: '200px'}" name="description" *ngIf="projectCredentials.description && projectCredentials.description.nl" [(ngModel)]="projectCredentials.description.nl.value"><div quill-editor-toolbar>
+             <!-- read-only="true" enable="false" enable="false" contenteditable="false" disable="true" disabled  disabled="disabled"  -->
+            <quill-editor [disabled]='!(isAdmin || editable_by.description.includes(AuthenticatedUser))' class="quill-editor" [style]="{height: '200px'}" name="description" *ngIf="projectCredentials.description && projectCredentials.description.nl" [(ngModel)]="projectCredentials.description.nl.value"><div quill-editor-toolbar>
                 <span class="ql-formats">
                     <select class="ql-size" [title]="'Size'">
                       <option selected></option>
@@ -76,7 +77,7 @@
 
         <div>
           <label id="title" for="title">{{'Titel'| translate}} project<span id="req_1" class="req">*</span></label><br>
-          <input id="title" name="title" type="text" maxlength="255" name="title" *ngIf="projectCredentials.title && projectCredentials.title.en" [(ngModel)]="projectCredentials.title.en.value" />
+          <input [disabled]='!(isAdmin || editable_by.title.includes(AuthenticatedUser))' id="title" name="title" type="text" maxlength="255" name="title" *ngIf="projectCredentials.title && projectCredentials.title.en" [(ngModel)]="projectCredentials.title.en.value" />
           <button mat-button (click)="isExpandedValidate.title = !isExpandedValidate.title" class="button--validate"><i class="fa fa-check" aria-hidden="true"></i></button>
           <app-validate class="input" #cmp *ngIf="projectCredentials.title.en" [projectCredentials]="projectCredentials.title.en.validate"  [hidden]='!isExpandedValidate.title'></app-validate>
           <!--  *ngIf="isExpandedValidate.title" -->
@@ -84,21 +85,21 @@
 
         <div>
           <label id="shorttitle" for="shorttitle">{{'Verkorte titel'| translate}} project</label><br>
-          <input id="shorttitle" name="shorttitle" type="text" maxlength="255" name="shorttitle" *ngIf="projectCredentials.shorttitle && projectCredentials.shorttitle.en" [(ngModel)]="projectCredentials.shorttitle.en.value" />   
+          <input [disabled]='!(isAdmin || editable_by.shorttitle.includes(AuthenticatedUser))' id="shorttitle" name="shorttitle" type="text" maxlength="255" name="shorttitle" *ngIf="projectCredentials.shorttitle && projectCredentials.shorttitle.en" [(ngModel)]="projectCredentials.shorttitle.en.value" />   
           <button mat-button (click)="isExpandedValidate.shorttitle = !isExpandedValidate.shorttitle" class="button--validate"><i class="fa fa-check" aria-hidden="true"></i></button>
           <app-validate class="input" #cmp *ngIf="projectCredentials.shorttitle.en" [projectCredentials]="projectCredentials.shorttitle.en.validate"  [hidden]='!isExpandedValidate.shorttitle'></app-validate>
 
         </div>
         <div>
           <label id="subtitle" for="subtitle">{{'Subtitel'| translate}} project</label><br>
-          <input id="subtitle" name="subtitle" type="text" maxlength="255" name="subtitle" *ngIf="projectCredentials.subtitle && projectCredentials.subtitle.en" [(ngModel)]="projectCredentials.subtitle.en.value" required>
+          <input [disabled]='!(isAdmin || editable_by.subtitle.includes(AuthenticatedUser))' id="subtitle" name="subtitle" type="text" maxlength="255" name="subtitle" *ngIf="projectCredentials.subtitle && projectCredentials.subtitle.en" [(ngModel)]="projectCredentials.subtitle.en.value" required>
           <button mat-button (click)="isExpandedValidate.subtitle = !isExpandedValidate.subtitle" class="button--validate"><i class="fa fa-check" aria-hidden="true"></i></button>
           <app-validate class="input" #cmp *ngIf="projectCredentials.subtitle.en" [projectCredentials]="projectCredentials.subtitle.en.validate"  [hidden]='!isExpandedValidate.subtitle'></app-validate>
         </div>
 
         <div>
           <h4>{{'Beschrijving'| translate}}</h4>
-          <quill-editor class="quill-editor" [style]="{height: '200px'}" name="description" *ngIf="projectCredentials.description && projectCredentials.description.en" [(ngModel)]="projectCredentials.description.en.value"><div quill-editor-toolbar>
+          <quill-editor [disabled]='!(isAdmin || editable_by.description.includes(AuthenticatedUser))' class="quill-editor" [style]="{height: '200px'}" name="description" *ngIf="projectCredentials.description && projectCredentials.description.en" [(ngModel)]="projectCredentials.description.en.value"><div quill-editor-toolbar>
               <span class="ql-formats">
                   <select class="ql-size" [title]="'Size'">
                     <option selected></option>
@@ -137,21 +138,20 @@
       <div class="timepicker">
           <h4>{{'Looptijd'| translate}}</h4>
           <mat-form-field>
-              <input matInput [matDatepicker]="pickerVan" placeholder="{{'Van'| translate}}" name="startdate" [(ngModel)]="projectCredentials.startdate">
+              <input [disabled]='!(isAdmin || editable_by.date.includes(AuthenticatedUser))' matInput [matDatepicker]="pickerVan" placeholder="{{'Van'| translate}}" name="startdate" [(ngModel)]="projectCredentials.startdate">
               <mat-datepicker-toggle matSuffix [for]="pickerVan"></mat-datepicker-toggle>
               <mat-datepicker #pickerVan></mat-datepicker>
             </mat-form-field>
 
             <mat-form-field>
-                <input matInput [matDatepicker]="pickerTot" placeholder="{{'Tot'| translate}}" name="enddate" [(ngModel)]="projectCredentials.enddate">
+                <input [disabled]='!(isAdmin || editable_by.date.includes(AuthenticatedUser))' matInput [matDatepicker]="pickerTot" placeholder="{{'Tot'| translate}}" name="enddate" [(ngModel)]="projectCredentials.enddate">
                 <mat-datepicker-toggle matSuffix [for]="pickerTot"></mat-datepicker-toggle>
                 <mat-datepicker #pickerTot></mat-datepicker>
               </mat-form-field>
-
       </div>
 
-      <hr>
       <div *ngIf="isAdmin" class="states">
+          <hr>
           <h4>{{'Status' | translate}}</h4>
           <mat-radio-group name="status" [(ngModel)]="projectCredentials.statusId">
               <mat-radio-button  *ngFor="let status of states" [value]="status.id"> {{ status.name |translate}}</mat-radio-button>

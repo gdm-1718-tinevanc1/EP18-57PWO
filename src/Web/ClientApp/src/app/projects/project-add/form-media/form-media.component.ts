@@ -23,6 +23,9 @@ export class FormMediaComponent implements OnInit {
   imageSrc = {image: '', typeMedia: null};
   iconSrc = {image: '', typeMedia: null};
   extImageSrc = [];
+
+  editable_by = []
+
   
   constructor(
     private projectService:ProjectService,
@@ -37,6 +40,7 @@ export class FormMediaComponent implements OnInit {
         project => { 
           this.credentials = project
           this.images = project.mediums
+          this.editable_by.push(project.profileId)
           this.sortImages()
         }
       )
@@ -122,7 +126,7 @@ export class FormMediaComponent implements OnInit {
 
   public save() {
     this.credentials.mediums = []; 
-    if(this.iconSrc.image) this.credentials.mediums.push(this.imageSrc)
+    if(this.imageSrc.image) this.credentials.mediums.push(this.imageSrc)
     if(this.iconSrc.image) this.credentials.mediums.push(this.iconSrc)
     for(var i = 0; i< this.extImageSrc.length; i++) this.credentials.mediums.push(this.extImageSrc[i])
 
@@ -132,6 +136,7 @@ export class FormMediaComponent implements OnInit {
       res => {
         this.message.error =  '';
         this.message.succes =  "Uw wijzigingen zijn opgeslaan"
+        setTimeout(()=>{ this.message.succes =  "" }, 3000);
         if(res){
           this.router.navigate(['/project', res.id, 'budget']);
         }
@@ -140,6 +145,7 @@ export class FormMediaComponent implements OnInit {
         console.log("Error occured");
         this.message.succes = '';
         this.message.error = "Uw wijzigingen zijn niet opgeslaan, gelieve opnieuw te proberen"
+        setTimeout(()=>{ this.message.error =  "" }, 3000);
       }
     );
   } 

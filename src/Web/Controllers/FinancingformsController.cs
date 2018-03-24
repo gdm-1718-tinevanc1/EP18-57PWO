@@ -51,5 +51,21 @@ namespace Web.Controllers
             }
             return new OkObjectResult(model);
         }
+
+       [HttpPost(Name = "CreateFinancingform")]
+        // [EnableCors("AllowAll")]
+        public async Task<IActionResult> CreateFinancingform([FromBody] Models.Financingform item)
+       {
+            if(item == null)
+            {
+               return BadRequest();
+            }
+
+            ApplicationDbContext.Financingforms.Add(item);
+            await ApplicationDbContext.SaveChangesAsync();
+
+           return this.CreatedAtRoute("GetFinancingformById", new { Controller = "FinancingformsController", financingformId = item.Id }, item);
+       }
+
     }
 }

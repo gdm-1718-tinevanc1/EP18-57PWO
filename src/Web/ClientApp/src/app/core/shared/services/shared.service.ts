@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 @Injectable()
 export class SharedService {
@@ -43,10 +44,16 @@ export class SharedService {
         visible_to: null,
         updated_at: Date
       }
-    },
-    language: 'nl'
+    }  
   };
 
-  constructor() { }
+  public language: BehaviorSubject<string> = new BehaviorSubject<string>(null);
 
+
+  setLanguage(value: string) {
+    this.language.next(value);
+  }
+  
 }
+
+

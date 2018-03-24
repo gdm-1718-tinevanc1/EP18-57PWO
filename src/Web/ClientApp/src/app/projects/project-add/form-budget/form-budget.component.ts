@@ -38,6 +38,10 @@ export class FormBudgetComponent implements OnInit {
     budgetValidate: this.valueObject
   };
 
+  editable_by  = {
+    budget: []
+  }
+
   constructor(
     private projectService:ProjectService,
     private typeService:TypeService,
@@ -62,6 +66,8 @@ export class FormBudgetComponent implements OnInit {
         project => { 
           this.projectCredentials = project
           this.projectCredentials.budgetValidate = JSON.parse(this.projectCredentials.budgetValidate.toString());
+          
+          this.editable_by.budget = this.projectCredentials.budget.validate.editable_by.push(this.projectCredentials.profileId)
 
           if(!project.budget){
             this.projectCredentials.budget = {
@@ -87,7 +93,9 @@ export class FormBudgetComponent implements OnInit {
     this.projectService.saveProjects(this.projectCredentials, 'budget').subscribe(
       res => {
         this.projectCredentials.budgetValidate = JSON.parse(this.projectCredentials.budgetValidate.toString());
+        this.message.error =  '';
         this.message.succes =  "Uw wijzigingen zijn opgeslaan"
+        setTimeout(()=>{ this.message.succes =  "" }, 3000);
         console.log(this.projectCredentials)
         if(res){
           this.router.navigate(['/project', res.id, 'budget']);
@@ -95,7 +103,10 @@ export class FormBudgetComponent implements OnInit {
       },
       err => {
         console.log("Error occured");
+        this.message.succes =  '';
         this.message.error = "Uw wijzigingen zijn niet opgeslaan, gelieve opnieuw te proberen"
+        setTimeout(()=>{ this.message.error =  "" }, 3000);
+
       }
     );
   }

@@ -14,7 +14,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class FormAbstractComponent implements OnInit {
   isAdmin = this.authenticationService.isAdmin;
-  language = this.sharedService.sharedNode.language 
+  language: string;
 
   @ViewChildren('cmp') components: QueryList<ValidateComponent>;
 
@@ -34,6 +34,10 @@ export class FormAbstractComponent implements OnInit {
     profileId: this.authenticationService.profileId
   };
 
+  editable_by  = {
+    abstract: []
+  }
+
   constructor(
     private projectService:ProjectService,
     private sharedService:SharedService,
@@ -43,6 +47,10 @@ export class FormAbstractComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.sharedService.language.subscribe((val: string) => {
+      this.language = val;
+    });
+
     this.id = this.route.parent.snapshot.params.id;
     if(this.id){
       this.projectService.getProjectGeneralById(this.id).subscribe(
@@ -50,6 +58,12 @@ export class FormAbstractComponent implements OnInit {
           this.projectCredentials = project
           this.projectCredentials.abstract = this.projectCredentials.abstract.toString().replace(/(\r\n\t|\n|\r\t)/gm,"");
           this.projectCredentials.abstract = JSON.parse(this.projectCredentials.abstract.toString());
+
+          if(this.language === 'nl'){
+            this.editable_by.abstract = this.projectCredentials.abstract.nl.validate.editable_by; this.editable_by.abstract.push(project.profileId)
+          } else{
+            this.editable_by.abstract = this.projectCredentials.abstract.en.validate.editable_by; this.editable_by.abstract.push(project.profileId)
+          }
         }
       )
     } else{
@@ -62,14 +76,18 @@ export class FormAbstractComponent implements OnInit {
     this.projectService.saveProjects(this.projectCredentials, 'general').subscribe(
       res => {
         this.projectCredentials.abstract = JSON.parse(this.projectCredentials.abstract.toString());
+        this.message.error =  '';
         this.message.succes =  "Uw wijzigingen zijn opgeslaan"
+        setTimeout(()=>{ this.message.succes =  "" }, 3000);
         if(res){
           this.router.navigate(['/project', res.id, 'abstract']);
         }
       },
       err => {
         console.log("Error occured");
+        this.message.succes =  '';
         this.message.error = "Uw wijzigingen zijn niet opgeslaan, gelieve opnieuw te proberen"
+        setTimeout(()=>{ this.message.error =  "" }, 3000);
       }
     );
   }
@@ -77,11 +95,11 @@ export class FormAbstractComponent implements OnInit {
   validate(){
     var validates = [];
     this.components.forEach(validate => validates.push(validate.validate));
-    /* if(this.language === 'nl'){
+    if(this.language === 'nl'){
       this.projectCredentials.abstract.nl.validate = validates[0] 
     } else{
       this.projectCredentials.abstract.en.validate = validates[0]
-    } */
+    }
 
 /*     this.projectCredentials.abstract.nl.validate = validates[0]
  */     // console.log(this.projectCredentials)

@@ -30,12 +30,14 @@
             background: none;
         }
     }
-    &.validateQuill {
-        top: 207px;
-    }
 }
 
 
+@media (min-width: 768px) {
+    .mat-button.button--validate.validateQuill {
+        top: 207px;
+    }
+}
 
 /** .button--upload **/
 mat-accordion.button--upload{
@@ -44,7 +46,6 @@ mat-accordion.button--upload{
 
 .button--upload{
     mat-expansion-panel{
-        width: 400px;
         padding: 0;
         margin-bottom: 20px;
         mat-expansion-panel-header{
@@ -104,3 +105,10 @@ mat-accordion.button--upload{
 
 
 
+@media (min-width: 768px) {
+    .button--upload{
+        mat-expansion-panel{
+             width: 400px;
+        }
+    }
+}

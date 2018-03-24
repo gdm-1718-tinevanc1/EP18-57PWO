@@ -11,10 +11,12 @@ export class NavSecondComponent implements OnInit {
   constructor(private sharedService:SharedService) { }
 
   ngOnInit() {
-    this.sharedService.sharedNode.language = this.selectedLanguage;
+    this.sharedService.setLanguage(this.selectedLanguage)
   }
 
   onChange($event){
-    this.sharedService.sharedNode.language = $event
+    this.sharedService.setLanguage($event)
+
+    // this.sharedService.sharedNode.language = $event
   }
 }

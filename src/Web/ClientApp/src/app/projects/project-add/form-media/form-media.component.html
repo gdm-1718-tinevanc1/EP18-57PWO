@@ -56,7 +56,7 @@
          </mat-expansion-panel>
     </mat-accordion>
 
-    <button class="button--save" (click)="save()" mat-button>{{'Opslaan' |translate}}</button>
+    <button [disabled]='!(isAdmin || editable_by.includes(AuthenticatedUser))' class="button--save" (click)="save()" mat-button>{{'Opslaan' |translate}}</button>
     </form>
 </div>
 

@@ -3,7 +3,7 @@
   <ul>
       <li *ngFor="let task of tasks">
           <mat-checkbox>{{task.name}}</mat-checkbox>
-      </li>
+      </li> 
     </ul>
 
     <div class='row'>
@@ -11,7 +11,7 @@
             <mat-form-field class="task__select">
                 <mat-select name="projects" placeholder="Project" [(ngModel)]="taskCredentials.projectId">
                   <mat-option>None</mat-option>
-                  <mat-option *ngFor="let project of projects" [value]="project.id" >{{project.shorttitle.nl.value}}</mat-option>
+                  <mat-option *ngFor="let project of projects" [value]="project.id" v-if="project.shorttitle.nl && project.shorttitle.nl.value" >{{project.shorttitle.nl.value}}</mat-option>
                 </mat-select>
               </mat-form-field>
 

@@ -9,7 +9,8 @@ import { MaterialModule } from '../core/material/material.module';
 import { AppRoutingModule } from '../app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { SharedModule } from '../shared/shared.module'
+import { SharedModule } from '../shared/shared.module';
+import { FinancingformService } from './shared/services/financingform.service'
 
 @NgModule({
   imports: [
@@ -31,7 +32,8 @@ import { SharedModule } from '../shared/shared.module'
     ProjectAddComponent
   ],
   providers: [
-    TypeService
+    TypeService,
+    FinancingformService
   ]
 })
 export class ProjectsModule { }

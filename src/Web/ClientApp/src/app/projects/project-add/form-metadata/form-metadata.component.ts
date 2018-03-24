@@ -1,8 +1,9 @@
 import { Component, OnInit, Directive, AfterViewInit, Input, ViewChild, ElementRef, ViewChildren, QueryList  } from '@angular/core';
-import {MatChipInputEvent} from '@angular/material';
+import {MatChipInputEvent, MatTabLinkBase} from '@angular/material';
 import {ENTER, COMMA} from '@angular/cdk/keycodes';
 import { ProjectService } from '../../../core/shared/services/project.service'
 import { TypeService } from '../../shared/services/type.service'
+import { FinancingformService } from '../../shared/services/financingform.service'
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router'; 
 import { Iproject } from '../../../core/shared/models/IProject';
@@ -78,9 +79,17 @@ export class FormMetadataComponent implements OnInit {
   participants_data = [];
   participants_filter_data = [];
 
+  editable_by  = {
+    partners: [],
+    participants: [],
+    financingforms: [],
+    links: []
+  }
+
   constructor(
     private projectService:ProjectService,
     private typeService:TypeService,
+    private financingformService:FinancingformService,
     private authenticationService:AuthenticationService,
     private sharedService:SharedService,
     private route: ActivatedRoute,
@@ -95,7 +104,7 @@ export class FormMetadataComponent implements OnInit {
         project => { 
           this.projectCredentials = project
           console.log(this.projectCredentials)
-
+        
           if(this.projectCredentials.participantValidate){
             this.projectCredentials.partnerValidate = JSON.parse(this.projectCredentials.partnerValidate.toString());
             this.projectCredentials.participantValidate = JSON.parse(this.projectCredentials.participantValidate.toString());
@@ -125,6 +134,11 @@ export class FormMetadataComponent implements OnInit {
           // console.log('test:', project.participants[i].participant.typeParticipant)
           // console.log('test:', this.participants_type)
           this.succes = "succes";
+
+          this.editable_by.partners = this.projectCredentials.partners.validate.editable_by.push(this.projectCredentials.profileId)
+          this.editable_by.participants = this.projectCredentials.participants.validate.editable_by.push(this.projectCredentials.profileId)
+          this.editable_by.financingforms = this.projectCredentials.financingforms.validate.editable_by.push(this.projectCredentials.profileId)
+          this.editable_by.links = this.projectCredentials.links.validate.editable_by.push(this.projectCredentials.profileId)
           }
         }
       )
@@ -135,12 +149,15 @@ export class FormMetadataComponent implements OnInit {
       this.projectCredentials.linkValidate = JSON.parse(this.projectCredentials.linkValidate.toString());
     }
 
-     this.typeService.getFinancingforms().subscribe(
+     this.getFinancingforms();
+     this.getParticipants();
+  }
+
+  getFinancingforms(){
+    this.typeService.getFinancingforms().subscribe(
       financingforms => { 
         this.financingforms_data = financingforms
       })
-
-      this.getParticipants();
   }
 
   getParticipants(){
@@ -258,22 +275,27 @@ export class FormMetadataComponent implements OnInit {
         this.projectCredentials.financingformValidate = JSON.parse(this.projectCredentials.financingformValidate.toString());
         this.projectCredentials.linkValidate = JSON.parse(this.projectCredentials.linkValidate.toString());
 
-        this.message.succes =  "Uw wijzigingen zijn opgeslaan"
+        this.message.error =  '';
+        this.message.succes =  "Uw wijzigingen zijn opgeslaan";
+        setTimeout(()=>{ this.message.succes =  "" }, 3000);
         if(res){
           this.router.navigate(['/project', res.id, 'metadata']);
         }
       },
       err => {
         console.log("Error occured");
-        this.message.error = "Uw wijzigingen zijn niet opgeslaan, gelieve opnieuw te proberen"
+        this.message.succes =  '';
+        this.message.error = "Uw wijzigingen zijn niet opgeslaan, gelieve opnieuw te proberen";
+        setTimeout(()=>{ this.message.error =  "" }, 3000);
+
       }
     );
   }
 
   validate(){
     var validates = [];
-/*     this.components.forEach(validate => validates.push(validate.validate));
- */    if(this.succes === 'succes'){
+    this.components.forEach(validate => validates.push(validate.validate));
+    if(this.succes === 'succes'){
       if(typeof this.projectCredentials.participantValidate === 'object'){
         if(this.language === 'nl'){
           this.projectCredentials.partnerValidate.validate = validates[0]
@@ -291,6 +313,31 @@ export class FormMetadataComponent implements OnInit {
     }
 
    this.save();
+
+  }
+
+  addFinancingform(event){
+    let credentials = { name: event.target.value};
+    this.financingformService.postFinancingform(credentials).subscribe(
+      res => {
+        console.log(res);
+        this.getFinancingforms()
+      },
+      err => {
+        console.log("Error occured");
+        this.message.error = "Uw financieringsvorm is niet opgeslaan, gelieve opnieuw te proberen"
+      }
+    );
+    alert('test')
+    // this.financingforms_data.push(event)
+  }
+
+  addLink(event, i){
+    this.links.splice(i, 1) 
+    if(event.target.value){
+      this.links.push(event.target.value)
+    }
+    if(this.links.length) this.AmountLinks = this.links.length;
 
   }
 }

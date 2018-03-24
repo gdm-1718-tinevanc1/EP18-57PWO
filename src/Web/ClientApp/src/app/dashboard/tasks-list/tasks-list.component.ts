@@ -33,7 +33,13 @@ export class TasksListComponent implements OnInit {
   ngOnInit() {
     this.getTasks();
     this.projectService.getProjects().subscribe(
-      result => { this.projects = result },
+      result => { 
+        this.projects = result
+        for(var i = 0; i < this.projects.length; i++){
+          this.projects[i].shorttitle = JSON.parse(this.projects[i].shorttitle);
+        }
+
+       },
       err => console.log('err')
     )
   }

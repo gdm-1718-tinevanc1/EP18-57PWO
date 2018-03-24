@@ -8,8 +8,8 @@
       </div>
 
       <h4>{{'Projectpartners' | translate}}</h4>
-      <mat-form-field class="fullpage" class="tags" >
-        <mat-chip-list #chipList>
+      <mat-form-field class="fullpage" class="tags" > <!-- [disabled]='!(isAdmin || editable_by.partners.includes(AuthenticatedUser))' -->
+        <mat-chip-list  #chipList [disabled]='!(isAdmin || editable_by.partners.includes(AuthenticatedUser))'>
             <mat-chip *ngFor="let partner of projectCredentials.partners" [selectable]="selectable"
                       [removable]="removable" (remove)="removeTag(partner, 'partner')">
               {{partner.name}}
@@ -31,16 +31,15 @@
       {{participants_type}}
 
     <mat-grid-list class="row" *ngFor="let participant of Arr(AmountParticipant).fill(1); let i = index;" cols="2" rowHeight="2:1">
-      <mat-form-field class="col-sm-4 selectType">   
-            <mat-select name="participanttype" [(ngModel)]="participants_type[i]" (change)="changetype($event.value, i, 'new')"> <!-- [(ngModel)]="participants_type[i]"  -->
-              <mat-option disabled="disabled">None</mat-option>
+      <mat-form-field class="col-sm-4 selectType">   <!-- [disabled]='!(isAdmin || editable_by.participants.includes(AuthenticatedUser))' -->
+            <mat-select [disabled]='!(isAdmin || editable_by.participants.includes(AuthenticatedUser))' name="participanttype" [(ngModel)]="participants_type[i]" (change)="changetype($event.value, i, 'new')"> <!-- [(ngModel)]="participants_type[i]"  -->
                <mat-option *ngFor="let data of participants_data" [value]="data.typeParticipant"> {{data.typeParticipant}}</mat-option>
             </mat-select>
           </mat-form-field>
 
           <div class="col-sm-8">
-              <mat-form-field class="form__value" >
-                  <mat-select name="participantvalue" [(ngModel)]="participants[i]">
+              <mat-form-field class="form__value" > <!-- [disabled]='!(isAdmin || editable_by.participants.includes(AuthenticatedUser))'  -->
+                  <mat-select [disabled]='!(isAdmin || editable_by.participants.includes(AuthenticatedUser))' name="participantvalue" [(ngModel)]="participants[i]">
                     <mat-option>None</mat-option>
                     <mat-option *ngFor="let data of participants_filter_data[i]" [value]="data.id" >{{data.name}}</mat-option>
                   </mat-select>
@@ -56,11 +55,15 @@
     <app-validate class="select" #cmp *ngIf="projectCredentials.participantValidate && projectCredentials.participantValidate.validate" [projectCredentials]="projectCredentials.participantValidate.validate"  [hidden]='!isExpandedValidate.participant'></app-validate>
 
     <h4>{{'Financieringsvormen' | translate}}</h4>
+    <input [disabled]='!(isAdmin || editable_by.financingforms.includes(AuthenticatedUser))' (change)="addFinancingform($event)" placeholder="{{'nieuwe financieringsvorm' | translate}}">
+    
+    <h6> {{'Selecteer financieringsvorm' | translate}}</h6>
     <mat-form-field class="selectUppercase fullpage">
-      <mat-select name="financingforms" [(ngModel)]="financingforms" multiple>
-              <mat-option *ngFor="let data of financingforms_data" [value]="data.id" >{{data.name}}</mat-option>
-            </mat-select>
-          </mat-form-field> <br>
+      <mat-select [disabled]='!(isAdmin || editable_by.financingforms.includes(AuthenticatedUser))' name="financingforms" [(ngModel)]="financingforms" multiple>
+          <mat-option *ngFor="let data of financingforms_data" [value]="data.id" >{{data.name}}</mat-option>
+      </mat-select>
+    </mat-form-field> <br>
+
           <div class="buttons-right">
             <button mat-button (click)="isExpandedValidate.financingforms = !isExpandedValidate.financingforms" class="button--validate"><i class="fa fa-check" aria-hidden="true"></i></button>    
       </div><div class="clear"></div>
@@ -83,11 +86,11 @@
           </mat-chip-list>
       </mat-form-field>
 
-
       <div>
         <label id="links" for="links">{{'Links' | translate}}</label><br>
-        <div *ngFor="let link of Arr(AmountLinks).fill(1); let i = index;">
-          <input name="links" type="text" maxlength="255" name="links" [(ngModel)]="links[i]" [(value)]="links[i]"  />
+        <div *ngFor="let link of Arr(AmountLinks).fill(1); let i = index;"> 
+          <input [disabled]='!(isAdmin || editable_by.links.includes(AuthenticatedUser))' name="links" type="text" maxlength="255" *ngIf="links[i]" [(value)]="links[i]" (change)="addLink($event, i)" /> 
+          <input [disabled]='!(isAdmin || editable_by.links.includes(AuthenticatedUser))' name="links2" type="text" maxlength="255" *ngIf="!links[i]" (change)="addLink($event, i)" />
         </div>
         <div class="buttons-right">
             <button mat-button class="button--validate" (click)="plusField('AmountLinks')"><i class="fa fa-plus"></i></button>

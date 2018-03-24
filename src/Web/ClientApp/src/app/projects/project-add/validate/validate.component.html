@@ -9,7 +9,7 @@
           <li><mat-checkbox [(ngModel)]="validate.publication_ok">{{'Ok voor publicatie' | translate}}</mat-checkbox></li>
         </ul>
         <h6>{{'Gevalideerd door' | translate}}:</h6>
-        <p>{{validate.validated_by}}</p>
+        <p>{{validatedBy}}</p>
       </div>
       <div class="col-sm-5">
         <h6>{{'Feedback' | translate}}</h6>
@@ -29,16 +29,14 @@
         <h6>{{'Editeerbaar door' | translate}}</h6>
         <mat-form-field class="form__value">
             <mat-select [disabled]='!isAdmin' [(value)]="validate.editable_by" multiple>
-              <mat-option value="option1">Option 1</mat-option>
-              <mat-option value="option2">Option 2</mat-option>
-              <mat-option value="option3">Option 3</mat-option>
+                <mat-option *ngFor="let profile of profiles" [value]="profile.id">{{profile.userName}}</mat-option>
             </mat-select>
           </mat-form-field>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-12 footer">
-          <p>{{'Laatste gewijzigd' | translate}}: {{validate.validated_by}} - {{validate.updated_at}}</p>
+          <p>{{'Laatste gewijzigd' | translate}}: {{validatedBy}}</p>
       </div>
     </div>
   </fieldset>

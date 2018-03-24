@@ -12,6 +12,7 @@ using iTextSharp;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 
+using Newtonsoft.Json.Linq;
 
 // using System.Net.Http.Headers;
 // using Microsoft.AspNetCore.Mvc.Rendering;
@@ -75,11 +76,19 @@ namespace Web.Controllers
             // Open the document to enable you to write to the document
             document.Open();
 
+            var Title = JsonConvert.DeserializeObject<Validate>(model.Title);
+            var Subtitle =  JsonConvert.DeserializeObject<Validate>(model.Subtitle);
+            var Description =  JsonConvert.DeserializeObject<Validate>(model.Description);
+            var Abstract =  JsonConvert.DeserializeObject<Validate>(model.Abstract);
+            var Shorttitle =  JsonConvert.DeserializeObject<Validate>(model.Shorttitle);
+            
+
+
             //icoon
-            Paragraph title = new Paragraph(model.Title);
-            Paragraph subtitle = new Paragraph(model.Subtitle);
+            Paragraph title = new Paragraph(Title.nl.value);
+            Paragraph subtitle = new Paragraph(Subtitle.nl.value);
             Paragraph duration = new Paragraph(model.Startdate.ToString() + " - " + model.Enddate.ToString());
-            Paragraph description = new Paragraph(model.Description);
+            Paragraph description = new Paragraph(Description.nl.value);
 
             title.Alignment = Element.ALIGN_CENTER;
             subtitle.Alignment = Element.ALIGN_CENTER;

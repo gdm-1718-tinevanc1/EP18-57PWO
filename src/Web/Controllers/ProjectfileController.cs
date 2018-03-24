@@ -11,7 +11,7 @@ using Newtonsoft.Json;
 using iTextSharp;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
-
+using Newtonsoft.Json.Linq;
 using Microsoft.AspNetCore.Hosting;
 
 using Database;
@@ -46,6 +46,20 @@ namespace Web.Controllers
             .Include(p => p.Budget).Include(t => t.Tags).Include(p => p.Publications).Include(p => p.Participants).ThenInclude(p => p.Participant)
             .FirstOrDefaultAsync(o => o.Id == projectId);
 
+            /* JsonConvert.DeserializeObject(model.Title);
+            JsonConvert.DeserializeObject(model.Subtitle);
+            JsonConvert.DeserializeObject(model.Description);
+            JsonConvert.DeserializeObject(model.Abstract);
+            JsonConvert.DeserializeObject(model.Shorttitle); */
+
+
+            /* model.Title = JSON.parse(model.Title);
+            model.Subtitle = JSON.parse(model.Subtitle);
+            model.Description = JSON.parse(model.Description);
+            model.Abstract = JSON.parse(model.Abstract);
+            model.Shorttitle = JSON.parse(model.Shorttitle);
+ */
+
             var uploadPath = Path.Combine(_environment.WebRootPath, "pdf");
             Directory.CreateDirectory(Path.Combine(uploadPath, projectId.ToString()));
 
@@ -68,9 +82,16 @@ namespace Web.Controllers
 
             /* Frontpage **/
             document.NewPage();
-            //icoon
-            Paragraph title = new Paragraph(model.Title);
-            Paragraph subtitle = new Paragraph(model.Subtitle);
+            
+            var Title = JsonConvert.DeserializeObject<Validate>(model.Title);
+            var Subtitle =  JsonConvert.DeserializeObject<Validate>(model.Subtitle);
+            var Description =  JsonConvert.DeserializeObject<Validate>(model.Description);
+            var Abstract =  JsonConvert.DeserializeObject<Validate>(model.Abstract);
+            var Shorttitle =  JsonConvert.DeserializeObject<Validate>(model.Shorttitle);
+
+                //icoon
+            Paragraph title = new Paragraph(Title.nl.value);
+            Paragraph subtitle = new Paragraph(Subtitle.nl.value);
             Paragraph duration = new Paragraph(model.Startdate.ToString() + " - " + model.Enddate.ToString());
 
             title.Alignment = Element.ALIGN_CENTER;
@@ -86,13 +107,13 @@ namespace Web.Controllers
 
             /* second page **/
             document.NewPage();
-            document.Add(new Paragraph(model.Title));
-            document.Add(new Paragraph(model.Subtitle));
+            document.Add(new Paragraph(Title.nl.value));
+            document.Add(new Paragraph(Subtitle.nl.value));
             document.Add(new Paragraph(model.Startdate.ToString() + " - " + model.Enddate.ToString()));
-            document.Add(new Paragraph(model.Description));
-            document.Add(new Paragraph(model.Abstract));
+            document.Add(new Paragraph(Description.nl.value));
+            document.Add(new Paragraph(Abstract.nl.value));
 
-
+ 
             /* third page **/
             document.NewPage();
             document.Add(new Paragraph("PROJECTMEDEWERKERS"));
