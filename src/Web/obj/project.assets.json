@@ -13343,7 +13343,7 @@
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/tine/Sites/EP18-57PWO/NuGet.Config",
+        "/Users/tine/Sites/EP18-57PWO/src/Web/NuGet.Config",
         "/Users/tine/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
